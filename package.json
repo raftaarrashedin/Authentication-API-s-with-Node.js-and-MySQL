@@ -18,6 +18,8 @@
   "homepage": "https://github.com/raftaarrashedin/Authentication-API-s-with-Node.js-and-MySQL#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
   }
 }
