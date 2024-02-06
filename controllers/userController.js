@@ -23,8 +23,11 @@ const register = (req,res) => {
             else{
                 bcrypt.hash(req.body.password, 10, (error,hash) => {
                     if(error){
-                        return res.status(400).send({
-                            msg : error
+                        // throw error;
+                        // console.log(error)
+                        return res.status(401).send({
+                            msg : "Kya baat h ye, kiu nh hora insert",
+                            msg:error
                         });
                     }else{
                         db.query(
@@ -33,12 +36,12 @@ const register = (req,res) => {
                             )}, ${db.escape(hash)});`,
                             (error,result) => {
                                 if(error) {
-                                    return result.status(400).send({
+                                    return res.status(404).send({
                                         msg:error
                                     })
                                 }
-                                return result.status(500).send({
-                                    msg: 'The user has been registered!'
+                                return res.status(500).send({
+                                    msg: 'Successfully, The user has been registered!'
                                 })
                             }
                         );
