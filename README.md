@@ -36,3 +36,7 @@ error solved, created and validated register api
 ```
 login and authorization function added and generated the jwt token
 ```
+
+```
+git commit -m " validated data using joi module "
+```
